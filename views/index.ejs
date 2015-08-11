@@ -9,15 +9,15 @@
 
     <%- include('partials/index/_header') %>
 
-    <%- include('partials/index/_fill-in', {topics: fillInTopics}) %>
+    <%- include('partials/index/_fill-in', {topics: getFillInTopics()}) %>
 
-    <%- include('partials/index/_choice', {topics: choiceTopics}) %>
+    <%- include('partials/index/_choice', {topics: getChoiceTopics()}) %>
 
-    <%- include('partials/index/_multiple-choice', {topics: multipleChoiceTopics}) %>
+    <%- include('partials/index/_multiple-choice', {topics: getMultipleChoiceTopics()}) %>
 
-    <%- include('partials/index/_true-false', {topics: trueFalseTopics}) %>
+    <%- include('partials/index/_true-false', {topics: getTrueFalseTopics()}) %>
 
-    <%- include('partials/index/_short-answer', {topics: shortAnswerTopics}) %>
+    <%- include('partials/index/_short-answer', {topics: getShortAnswerTopics()}) %>
 
     <div class="row">
       <div class="col-md-12 text-center">

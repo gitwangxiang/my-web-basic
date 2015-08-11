@@ -1,11 +1,7 @@
 'use strict';
 
 var TopicHelper = require('../helpers/topic');
-var FillInTopic = require('../models/fill-in-topic');
-var ChoiceTopic = require('../models/choice-topic');
-var MultipleChoiceTopic = require('../models/multiple-choice-topic');
-var TrueFalseTopic = require('../models/true-false-topic');
-var ShortAnswerTopic = require('../models/short-answer-topic');
+var HomeViewModel = require('../view-models/home');
 
 function HomeController() {
 
@@ -17,34 +13,9 @@ HomeController.prototype.index = function(req, res) {
 
   var topics = topicHelper.getTopics();
 
-  var fillInTopics = topics.filter(function(topic) {
-    return topic instanceof FillInTopic;
-  });
+  var viewModel = new HomeViewModel(topics);
 
-  var choiceTopics = topics.filter(function(topic) {
-    return topic instanceof ChoiceTopic;
-  });
-
-  var multipleChoiceTopics = topics.filter(function(topic) {
-    return topic instanceof MultipleChoiceTopic;
-  });
-
-  var trueFalseTopics = topics.filter(function(topic) {
-    return topic instanceof TrueFalseTopic;
-  });
-
-  var shortAnswerTopics = topics.filter(function(topic) {
-    return topic instanceof ShortAnswerTopic;
-  });
-
-
-  res.render('index', {
-    fillInTopics: fillInTopics,
-    choiceTopics: choiceTopics,
-    multipleChoiceTopics: multipleChoiceTopics,
-    trueFalseTopics: trueFalseTopics,
-    shortAnswerTopics: shortAnswerTopics
-  });
+  res.render('index', viewModel);
 };
 
 module.exports = HomeController;
