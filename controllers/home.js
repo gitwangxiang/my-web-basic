@@ -12,7 +12,7 @@ HomeController.prototype.index = function(req, res) {
   fillIn1.title = 'UML的中文全称是：';
   fillIn1.addOption('');
 
-  var fillIn2 = new Topic(2, 'fill-in-2', 15, ['继承性', '封装性', '多态性']);
+  var fillIn2 = new Topic(2, 'fill-in-2', 5, ['继承性', '封装性', '多态性']);
   fillIn2.title = '对象最突出的特征是：';
   fillIn2.addOption('');
   fillIn2.addOption('');
@@ -73,7 +73,7 @@ HomeController.prototype.index = function(req, res) {
   ];
 
   var shortAnswer1 = new Topic(1, 'short-answer-1', 20,
-    ['模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式']);
+    ['模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式。']);
   shortAnswer1.title = '简述什么是模型以及模型的表现形式？';
 
   var shortAnswerTopics = [
