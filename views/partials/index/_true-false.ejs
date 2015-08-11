@@ -1,39 +1,28 @@
+<% if (topics.length > 0) { %>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h4>四、判断题（每题10分，共20分）</h4>
+    <h4>判断题（每题10分，共20分）</h4>
   </div>
   <div class="panel-body">
     <ol>
+      <% topics.forEach(function(topic) { %>
       <li>
         <div class="form-group">
           <label class="control-label">
-            用例图只是用于和客户交流和沟通的，用于确定需求。
+            <%= topic.title %>
           </label>
           <label class="radio-inline">
-            <input type="radio" id="true_false_1_0" name="true_false_1" value="V">
+            <input type="radio" name="<%= topic.name %>" value="false">
             <span class="glyphicon glyphicon-ok text-success"></span>
           </label>
           <label class="radio-inline">
-            <input type="radio" id="true_false_1_1" name="true_false_1" value="X">
+            <input type="radio" name="<%= topic.name %>" value="true">
             <span class="glyphicon glyphicon-remove text-danger"></span>
           </label>
         </div>
       </li>
-      <li>
-        <div class="form-group">
-          <label class="control-label">
-            在状态图中，终止状态在一个状态图中允许有任意多个。
-          </label>
-          <label class="radio-inline">
-            <input type="radio" id="true_false_2_0" name="true_false_2" value="V">
-            <span class="glyphicon glyphicon-ok text-success"></span>
-          </label>
-          <label class="radio-inline">
-            <input type="radio" id="true_false_2_1" name="true_false_2" value="X">
-            <span class="glyphicon glyphicon-remove text-danger"></span>
-          </label>
-        </div>
-      </li>
+      <% }); %>
     </ol>
   </div>
 </div>
+<% } %>

@@ -1,33 +1,26 @@
+<% if (topics.length > 0) { %>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h4>一、填空题（每空5分，共20分）</h4>
+    <h4>填空题（每空5分，共20分）</h4>
   </div>
   <div class="panel-body">
     <ol>
+      <% topics.forEach(function(topic) { %>
       <li class="">
         <div class="form-group">
-          <label for="fill_in_1_0" class="control-label">
-            UML的中文全称是：
+          <label class="control-label">
+            <%= topic.title %>
           </label>
 
           <div class="form-inline">
-            <input type="text" id="fill_in_1_0" name="fill_in_1" class="form-control">
+            <% topic.options.forEach(function(option, index) { %>
+            <input type="text" name="<%= topic.name + '_' + index %>" class="form-control">
+            <% }); %>
           </div>
         </div>
       </li>
-      <li class="">
-        <div class="form-group">
-          <label for="fill_in_2_0" class="control-label">
-            对象最突出的特征是：
-          </label>
-
-          <div class="form-inline">
-            <input type="text" id="fill_in_2_0" name="fill_in_2_0" class="form-control">
-            <input type="text" id="fill_in_2_1" name="fill_in_2_1" class="form-control">
-            <input type="text" id="fill_in_2_2" name="fill_in_2_2" class="form-control">
-          </div>
-        </div>
-      </li>
+      <% }); %>
     </ol>
   </div>
 </div>
+<% } %>
