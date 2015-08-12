@@ -13,8 +13,8 @@
           </label>
 
           <div class="form-inline">
-            <% topic.options.forEach(function(option, index) { %>
-            <input type="text" name="<%= topic.name + '_' + index %>" class="form-control">
+            <% topic.options.forEach(function(option) { %>
+            <input type="text" name="<%= topic.name %>" class="form-control">
             <% }); %>
           </div>
         </div>
